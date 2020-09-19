@@ -16,11 +16,19 @@ class ContactController extends Controller
       return view('pages/display-all', compact('contacts'));
   }
 
-  public function show($id) // Show a single resource
+  public function showSearch()
   {
-      $contacts = Contact::find($id);
+      $searchQ = $_GET['q'];
 
-      return view('pages/display-search', compact('contacts'));
+      $dataQuery = DB::table('contacts')
+          ->where('name', 'LIKE', $searchQ . '%')
+          ->orWhere('sirname', 'LIKE', $searchQ . '%')
+          ->orWhere('email', 'LIKE', $searchQ . '%')
+          ->orWhere('company', 'LIKE', $searchQ . '%')
+          ->paginate(5);
+
+      $results = $dataQuery;
+      return view('pages/display-search', compact('results', 'searchQ'));
   }
 
   public function list()

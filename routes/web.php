@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +25,8 @@ Route::get('/about', function () {
 });
 
 Route::get('/display-all', 'App\Http\Controllers\ContactController@list');
+Route::get('/display-search', 'App\Http\Controllers\ContactController@showSearch');
+
+Route::get('/search', function () {
+    return view('pages/search');
+});

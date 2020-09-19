@@ -27,7 +27,6 @@
                 <div class="page-links">
                   {{ $contacts->links() }}
                 </div>
-
             </div>
         </div>
     </div>

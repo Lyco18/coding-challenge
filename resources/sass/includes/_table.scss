@@ -16,3 +16,16 @@
 tr:nth-child(even) {
   background-color: $light_purple;
 }
+
+.form-control {
+    width: 300px;
+    font-size: 30px;
+    align-content: center;
+}
+
+.btn {
+  height: 40px;
+  padding: 0;
+  margin-top: -20px;
+  width: 40px;
+}

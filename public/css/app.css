@@ -168,6 +168,19 @@ tr:nth-child(even) {
   background-color: #c9d7ff;
 }
 
+.form-control {
+  width: 300px;
+  font-size: 30px;
+  align-content: center;
+}
+
+.btn {
+  height: 40px;
+  padding: 0;
+  margin-top: -20px;
+  width: 40px;
+}
+
 /**
  * Classes in footer
  */
