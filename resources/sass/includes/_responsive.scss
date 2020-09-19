@@ -1,0 +1,16 @@
+/**
+ * Responsive style
+ */
+
+ @media screen and (max-width: 850px) {
+    .footer {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 1014px) {
+    .front-image {
+        display: none;
+
+    }
+}

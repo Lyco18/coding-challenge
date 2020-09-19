@@ -1,0 +1,32 @@
+/**
+ * Classes in navbar
+ */
+ .navbar {
+    height: 65px;
+}
+.navbar-outer {
+    background-color: $white;
+}
+.navbar-inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: $white;
+    position: fixed;
+    z-index: 1;
+}
+
+.navbar-inner > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 18px;
+    font-weight: 200;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.navbar-inner > a:hover {
+    color: $light_purple;
+}
