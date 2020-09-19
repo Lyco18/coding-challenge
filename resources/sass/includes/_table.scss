@@ -1,0 +1,18 @@
+.display-table {
+  width: 800px;
+}
+
+.page-links svg{
+  display: inline;
+  height: 15px;
+}
+
+.display-table td, th {
+  border: 1px solid $light_purple;
+  text-align: left;
+  padding: 6px;
+}
+
+tr:nth-child(even) {
+  background-color: $light_purple;
+}

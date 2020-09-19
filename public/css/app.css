@@ -148,6 +148,26 @@ a:visited {
   color: #c9d7ff;
 }
 
+.display-table {
+  width: 800px;
+}
+
+.page-links svg {
+  display: inline;
+  height: 15px;
+}
+
+.display-table td,
+th {
+  border: 1px solid #c9d7ff;
+  text-align: left;
+  padding: 6px;
+}
+
+tr:nth-child(even) {
+  background-color: #c9d7ff;
+}
+
 /**
  * Classes in footer
  */
@@ -175,14 +195,11 @@ a:visited {
   transform-origin: bottom;
   -webkit-animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
           animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  margin-bottom: -20px;
 }
 
 .copyright {
   text-align: center;
-}
-
-svg {
-  margin-bottom: -20px;
 }
 
 text {

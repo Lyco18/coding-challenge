@@ -25,4 +25,4 @@ Route::get('/about', function () {
     return view('pages/about');
 });
 
-Route::get('/display-all', 'App\Http\Controllers\ContactController@index');
+Route::get('/display-all', 'App\Http\Controllers\ContactController@list');
