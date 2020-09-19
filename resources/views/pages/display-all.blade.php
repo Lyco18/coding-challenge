@@ -3,6 +3,13 @@
 <div class="flex-center position-ref full-height">
     <div class="content">
         <div class="title">
+          @if (\Session::has('success'))
+              <div class="alert alert-success">
+                  <ul>
+                      <li>{!! \Session::get('success') !!}</li>
+                  </ul>
+              </div>
+          @endif
           <form action="{{ asset('/contacts/create') }}">
             <button type="submit" class="btn btn-default">Create new Contact</button>
           </form>
@@ -19,12 +26,16 @@
                   </tr>
                   @foreach ($contacts as $contact)
                     <tr>
-                      <td>{{ $contact->name }} {{ $contact->sirname }}</td>
+                      <td><a href="{{ route('contacts.edit', $contact->email)}}" class="btn btn-primary">{{ $contact->name }} {{ $contact->sirname }}</a></td>
                       <td>{{ $contact->dob }}</td>
                       <td>{{ $contact->company }}</td>
                       <td>{{ $contact->position }}</td>
                       <td>{{ $contact->email }}</td>
                       <td>{{ $contact->number }}</td>
+                      <td><form action="{{ route('contacts.destroy', $contact->email)}}" method="post">
+                          @csrf @method('DELETE')
+                          <button class="btn btn-danger" type="submit">Delete</button>
+                      </form></td>
                     </tr>
                   @endforeach
                 </table>

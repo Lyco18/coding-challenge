@@ -154,32 +154,6 @@ a:visited {
   color: #c9d7ff;
 }
 
-.display-table {
-  width: 800px;
-}
-
-.page-links svg {
-  display: inline;
-  height: 15px;
-}
-
-.display-table td,
-th {
-  border: 1px solid #c9d7ff;
-  text-align: left;
-  padding: 6px;
-}
-
-tr:nth-child(even) {
-  background-color: #c9d7ff;
-}
-
-.form-control {
-  width: 300px;
-  font-size: 30px;
-  align-content: center;
-}
-
 input[type=text],
 select {
   width: 60%;
@@ -210,6 +184,41 @@ button[type=submit]:hover {
   background-color: #f6f6f6;
   padding: 20px;
   text-align: center;
+}
+
+.display-table {
+  width: 800px;
+}
+
+.page-links svg {
+  display: inline;
+  height: 15px;
+}
+
+.display-table td,
+th {
+  border: 1px solid #c9d7ff;
+  text-align: left;
+  padding: 6px;
+}
+
+tr:nth-child(even) {
+  background-color: #c9d7ff;
+}
+
+.form-control {
+  width: 300px;
+  font-size: 30px;
+  align-content: center;
+}
+
+.display-table button {
+  background-color: transparent;
+  color: #636b6f;
+}
+
+.display-table button:hover {
+  background-color: transparent;
 }
 
 /**

@@ -20,15 +20,15 @@ class ContactController extends Controller
   {
       $searchQ = $_GET['q'];
 
-      $dataQuery = DB::table('contacts')
+      $contactsQuery = DB::table('contacts')
           ->where('name', 'LIKE', $searchQ . '%')
           ->orWhere('sirname', 'LIKE', $searchQ . '%')
           ->orWhere('email', 'LIKE', $searchQ . '%')
           ->orWhere('company', 'LIKE', $searchQ . '%')
           ->paginate(5);
 
-      $results = $dataQuery;
-      return view('pages/display-search', compact('results', 'searchQ'));
+      $contacts = $contactsQuery;
+      return view('pages/display-search', compact('contacts', 'searchQ'));
   }
 
   public function list()
@@ -41,6 +41,18 @@ class ContactController extends Controller
   public function create()
   {
       return view('pages/create-contact');
+  }
+
+  public function show($email)
+  {
+     $contacts =  Contact::find($email);
+     return view('pages/display-all', compact(['contacts']));
+  }
+
+  public function edit($email)
+  {
+     $contacts = Contact::find($email);
+     return view('pages/update-contact', compact(['contacts']));
   }
 
   public function store(Request $request)
@@ -79,14 +91,23 @@ class ContactController extends Controller
             'number'=>'required'
         ]);
 
+        $contact = Contact::find($email);
 
-        Contact::where('email',$email)->update($request->all());
-        return redirect()->back()->with('success','Update Successfully');
+        $contact->name = $request['name'];
+        $contact->sirname = $request['sirname'];
+        $contact->dob = $request['dob'];
+        $contact->company = $request['company'];
+        $contact->position = $request['position'];
+        $contact->email = $request['email'];
+        $contact->number = $request['number'];
+        $contact->save();
+
+        return redirect()->back()->with('success','The new contact has been successfully updated');
   }
 
   public function destroy($email)
   {
-      Contact::where('email',$email)->delete();
-      return redirect()->back()->with('success','Delete Successfully');
+      Contact::where('email', $email)->delete();
+      return redirect()->back()->with('success','Contact successfully deleted');
   }
 }

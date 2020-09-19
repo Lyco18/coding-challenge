@@ -11,6 +11,10 @@ class Contact extends Model
 
     public $timestamps = false;
 
+    protected $primaryKey = 'email';
+    protected $keyType = 'string';
+    public $incrementing = false;
+
     protected $table = 'contacts';
     protected $fillable = [
         'name',

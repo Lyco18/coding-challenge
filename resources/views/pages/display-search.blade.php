@@ -1,8 +1,15 @@
 @extends('layouts.default')
 @section('content')
-<div class="flex-center position-ref full-height">
+<div class="flex-center position-ref">
     <div class="content">
         <div class="title">
+          @if (\Session::has('success'))
+              <div class="alert alert-success">
+                  <ul>
+                      <li>{!! \Session::get('success') !!}</li>
+                  </ul>
+              </div>
+          @endif
           <form action="{{ asset('display-search')}}" method="GET" role="q">
             <div class="input-group">
                 <input type="text" class="form-control" name="q"
@@ -21,19 +28,23 @@
                 <th>Email</th>
                 <th>Phone Number</th>
               </tr>
-              @foreach ($results as $result)
+              @foreach ($contacts as $contact)
                 <tr>
-                  <td>{{ $result->name }} {{ $result->sirname }}</td>
-                  <td>{{ $result->dob }}</td>
-                  <td>{{ $result->company }}</td>
-                  <td>{{ $result->position }}</td>
-                  <td>{{ $result->email }}</td>
-                  <td>{{ $result->number }}</td>
+                  <td>{{ $contact->name }} {{ $contact->sirname }}</td>
+                  <td>{{ $contact->dob }}</td>
+                  <td>{{ $contact->company }}</td>
+                  <td>{{ $contact->position }}</td>
+                  <td>{{ $contact->email }}</td>
+                  <td>{{ $contact->number }}</td>
+                  <td><form action="{{ route('contacts.destroy', $contact->email)}}" method="post">
+                      @csrf @method('DELETE')
+                      <button class="btn btn-danger" type="submit">Delete</button>
+                  </form></td>
                 </tr>
               @endforeach
             </table>
             <div class="page-links">
-              {{ $results->appends($_GET)->links() }}
+              {{ $contacts->appends($_GET)->links() }}
             </div>
           </div>
         </div>

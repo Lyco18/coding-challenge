@@ -49,10 +49,10 @@
 				{!! F::text("number", null ,["class"=>"form-control","required"=>"required"]) !!}
 			</div>
 
-        <div class="btn">
-            <button type="submit" class="btn btn-success" title="Save">Create</button>
-        </div>
-    </div>
+      <div class="btn">
+          <button type="submit" class="btn btn-success" title="Save">Create</button>
+      </div>
+  </div>
 
 {!! F::close() !!}
 @endsection
