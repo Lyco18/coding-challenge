@@ -24,6 +24,8 @@ Route::get('/about', function () {
     return view('pages/about');
 });
 
+Route::resource('contacts','App\Http\Controllers\ContactController');
+
 Route::get('/display-all', 'App\Http\Controllers\ContactController@list');
 Route::get('/display-search', 'App\Http\Controllers\ContactController@showSearch');
 

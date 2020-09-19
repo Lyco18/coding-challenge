@@ -4,7 +4,7 @@
     <div class="content">
         <div class="title">
           <p> You can search for first name, last name, email or a company name. </p>
-          <p>I originally set the param to % ? %, but to narrow results down results showing is what the search starts with.</p>
+          <p>I originally set the param to '% ? %', but to narrow results down, the results showing is what the search starts with. ('? %')</p>
           <br>
           <form action="{{ asset('display-search')}}" method="GET" role="q">
             <div class="input-group">

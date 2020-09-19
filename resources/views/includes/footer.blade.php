@@ -5,7 +5,7 @@
             <a href="https://github.com/lyco18" class="fa" style="font-size:60px">&#xf09b;     </a>
         </text>
         <text x="44%" y="90%" fill="white">
-            © Copyright 2020 Cocozza
+          Made by Lydia Cocozza
         </text>
       </svg>
     </div>

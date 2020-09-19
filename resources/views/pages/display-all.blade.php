@@ -3,6 +3,10 @@
 <div class="flex-center position-ref full-height">
     <div class="content">
         <div class="title">
+          <form action="{{ asset('/contacts/create') }}">
+            <button type="submit" class="btn btn-default">Create new Contact</button>
+          </form>
+
           <div class="display-table">
               <table>
                   <tr>

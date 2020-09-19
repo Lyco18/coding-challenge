@@ -36,4 +36,57 @@ class ContactController extends Controller
       $contacts = DB::table('contacts')->paginate(5);
       return view('pages/display-all', compact('contacts'));
   }
+
+
+  public function create()
+  {
+      return view('pages/create-contact');
+  }
+
+  public function store(Request $request)
+  {
+          $request->validate([
+            'name'=>'required',
+            'sirname'=>'required',
+            'dob'=>'required',
+            'company'=>'required',
+            'position'=>'required',
+            'email'=>'required',
+            'number'=>'required'
+          ]);
+          $contact = new Contact([
+              'name' => $request->get('name'),
+              'sirname' => $request->get('sirname'),
+              'dob' => $request->get('dob'),
+              'company' => $request->get('company'),
+              'position' => $request->get('position'),
+              'email' => $request->get('email'),
+              'number' => $request->get('number')
+          ]);
+          $contact->save();
+          return redirect()->back()->with('success','The new contact has been successfully created');
+  }
+
+  public function update(Request $request, $email)
+  {
+        $request->validate([
+            'name'=>'required',
+            'sirname'=>'required',
+            'dob'=>'required',
+            'company'=>'required',
+            'position'=>'required',
+            'email'=>'required',
+            'number'=>'required'
+        ]);
+
+
+        Contact::where('email',$email)->update($request->all());
+        return redirect()->back()->with('success','Update Successfully');
+  }
+
+  public function destroy($email)
+  {
+      Contact::where('email',$email)->delete();
+      return redirect()->back()->with('success','Delete Successfully');
+  }
 }

@@ -13,7 +13,10 @@
     font-weight: 200;
     align-content: center;
 }
-
+li {
+  text-decoration: none;
+  display: block;
+}
 p {
     font-weight: 100;
     font-size: 22px;
@@ -63,6 +66,7 @@ section {
 .container {
     width: 100%;
     margin: 0 auto;
+    align-content: center;
 }
 .full-height {
     height: 70vh;
