@@ -24,11 +24,19 @@ Route::get('/about', function () {
     return view('pages/about');
 });
 
-Route::resource('contacts','App\Http\Controllers\ContactController');
+Route::get('/search', function () {
+  return view('pages/search');
+});
 
+Route::resource('contacts','App\Http\Controllers\ContactController');
 Route::get('/display-all', 'App\Http\Controllers\ContactController@list');
 Route::get('/display-search', 'App\Http\Controllers\ContactController@showSearch');
 
-Route::get('/search', function () {
-    return view('pages/search');
+
+Route::get('/profile', function () {
+  return view('pages/profile');
 });
+
+Route::get('/login', 'App\Http\Controllers\LoginController@show');
+Route::post('/login', 'App\Http\Controllers\LoginController@login');
+Route::get('/logout', 'App\Http\Controllers\LoginController@logout');
