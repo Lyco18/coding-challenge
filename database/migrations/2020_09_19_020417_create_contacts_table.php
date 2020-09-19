@@ -20,7 +20,8 @@ class CreateContactsTable extends Migration
           $table->string('company');
           $table->string('position');
           $table->string('email')->unique();;
-          $table->integer('number');        });
+          $table->integer('number');
+        });
     }
 
     /**
