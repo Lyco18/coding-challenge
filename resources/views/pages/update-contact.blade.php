@@ -8,16 +8,16 @@
           </ul>
       </div>
   @endif
-
+  @if(session()->has('username'))
   {!! F::open(['action' =>['App\Http\Controllers\ContactController@update', $contacts->email], 'method' => 'POST'])!!}
   {{ csrf_field() }}
   {{ method_field('PATCH') }}
       <div class="col-md-6">
 
-  			 <div class="form-group required">
-  				{!! F::label("Name") !!}
-  				{!! F::text("name", $contacts->name, ["class"=>"form-control","required"=>"required"]) !!}
-  			</div>
+         <div class="form-group required">
+          {!! F::label("Name") !!}
+          {!! F::text("name", $contacts->name, ["class"=>"form-control","required"=>"required"]) !!}
+        </div>
         <div class="form-group required">
            {!! F::label("Sirname") !!}
            {!! F::text("sirname", $contacts->sirname, ["class"=>"form-control","required"=>"required"]) !!}
@@ -38,15 +38,15 @@
          {!! F::text("position", $contacts->position, ["class"=>"form-control","required"=>"required"]) !!}
         </div>
 
-  			 <div class="form-group required">
-  				{!! F::label("Email") !!}
-  				{!! F::text("email", $contacts->email, ["class"=>"form-control","required"=>"required"]) !!}
-  			</div>
+         <div class="form-group required">
+          {!! F::label("Email") !!}
+          {!! F::text("email", $contacts->email, ["class"=>"form-control","required"=>"required"]) !!}
+        </div>
 
-  			 <div class="form-group required">
-  				{!! F::label("Phone number") !!}
-  				{!! F::text("number", $contacts->number, ["class"=>"form-control","required"=>"required"]) !!}
-  			</div>
+         <div class="form-group required">
+          {!! F::label("Phone number") !!}
+          {!! F::text("number", $contacts->number, ["class"=>"form-control","required"=>"required"]) !!}
+        </div>
 
           <div class="btn">
               <button type="submit" class="btn btn-success" title="Save">Update</button>
@@ -57,5 +57,11 @@
   <form action="{{ asset('display-all')}}">
       <button class="btn" type="submit">Back to all results</button>
   </form>
-</div>
+  </div>
+  @else
+      <p>Log in to edit contact!</p>
+      <form action="{{ asset('login')}}">
+          <button class="btn" type="submit">Go to login!</button>
+      </form>
+  @endif
 @endsection

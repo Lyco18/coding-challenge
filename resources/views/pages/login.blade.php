@@ -2,15 +2,14 @@
 @section('content')
 <div class="flex-center position-ref full-height">
     <div class="content">
-      @if (\Session::has('success'))
-          <div class="alert alert-success">
-              <ul>
-                  <li>{!! \Session::get('success') !!}</li>
-              </ul>
-          </div>
-      @endif
-
-      {{ $user ?? '' }}
+      @if(session()->has('username'))
+      <div class="title m-b-md">
+          <p>Hello, {{ session('username')}}</p>
+      </div>
+      <form action="{{ asset('profile')}}">
+          <button class="btn" type="submit">Head over to profile!</button>
+      </form>
+      @else
       {!! F::open(['action' =>'App\Http\Controllers\LoginController@login', 'method' => 'POST'])!!}
       {{ csrf_field() }}
           <div class="col-md-6">
@@ -28,7 +27,7 @@
                   <button type="submit" class="btn btn-success" title="Save">Login</button>
               </div>
           </div>
-      {!! F::close() !!}
+      {!! F::close() !!}      @endif
     </div>
 </div>
 @stop

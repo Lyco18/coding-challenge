@@ -27,6 +27,7 @@ class LoginController extends Controller
       if(session()->has('username')) {
         session()->pull('username');
       }
+      
       return view('pages/login');
     }
 }
