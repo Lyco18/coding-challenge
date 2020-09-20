@@ -13,6 +13,7 @@
                               @guest
                                   @if (Route::has('register'))
                                       <li class="nav-item">
+                                        <p>Register as a user before logging in!</p>
                                           <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                       </li>
                                   @endif
