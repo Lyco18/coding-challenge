@@ -3,23 +3,14 @@
 <div class="flex-center position-ref full-height">
     <div class="content">
         <div class="title">
-          @if (\Session::has('success'))
               <div class="alert alert-success">
                   <ul>
                       <li>{!! \Session::get('success') !!}</li>
                   </ul>
               </div>
-          @endif
-          @if(session()->has('username'))
           <form action="{{ asset('/contacts/create') }}">
             <button type="submit" class="btn btn-default">Create new Contact</button>
           </form>
-          @else
-              <p>Log in to create new customer!</p>
-              <form action="{{ asset('login')}}">
-                  <button class="btn" type="submit">Go to login!</button>
-              </form>
-          @endif
 
           <div class="display-table">
               <table>

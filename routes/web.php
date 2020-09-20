@@ -37,6 +37,10 @@ Route::get('/profile', function () {
   return view('pages/profile');
 });
 
-Route::get('/login', 'App\Http\Controllers\LoginController@show');
-Route::post('/login', 'App\Http\Controllers\LoginController@login');
-Route::get('/logout', 'App\Http\Controllers\LoginController@logout');
+// Route::get('/login', 'App\Http\Controllers\LoginController@show');
+// Route::post('/login', 'App\Http\Controllers\LoginController@login');
+// Route::get('/logout', 'App\Http\Controllers\LoginController@logout');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

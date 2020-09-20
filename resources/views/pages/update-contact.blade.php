@@ -8,7 +8,6 @@
           </ul>
       </div>
   @endif
-  @if(session()->has('username'))
   {!! F::open(['action' =>['App\Http\Controllers\ContactController@update', $contacts->email], 'method' => 'POST'])!!}
   {{ csrf_field() }}
   {{ method_field('PATCH') }}
@@ -58,10 +57,4 @@
       <button class="btn" type="submit">Back to all results</button>
   </form>
   </div>
-  @else
-      <p>Log in to edit contact!</p>
-      <form action="{{ asset('login')}}">
-          <button class="btn" type="submit">Go to login!</button>
-      </form>
-  @endif
 @endsection

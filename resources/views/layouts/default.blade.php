@@ -12,7 +12,12 @@
 
     <div id="main" class="row">
 
+      <body>
+          <div id="app">
+
             @yield('content')
+
+          </div>
 
     </div>
 

@@ -16,6 +16,15 @@ input[type=password], select {
   box-sizing: border-box;
 }
 
+input[type=email], select {
+  width: 60%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 button[type=submit] {
   width: 60%;
   background-color: $light_purple;
@@ -31,7 +40,7 @@ button[type=submit]:hover {
   background-color: $grey;
 }
 
-.col-md-6 {
+.col-md-6, .col-md-8 {
   border-radius: 5px;
   background-color: $light_grey;
   padding: 20px;

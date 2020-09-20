@@ -4,7 +4,6 @@
     <div class="content">
         <div class="title m-b-md">
           Welcome
-          <p> Log in to edit and create contacts </p>
         </div>
     </div>
 </div>
