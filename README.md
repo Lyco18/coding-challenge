@@ -9,14 +9,15 @@
 -Create database in MySQL: `contact`
 
 -Edit `.env.example` file to `.env`:
+Change [username] to root (or username), change [password] to your password, or leave blank.
 
 ```php
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=contact
-DB_USERNAME=root
-DB_PASSWORD=password
+DB_USERNAME=[username]
+DB_PASSWORD=[password]
 ```
 
 -Run following commands:
