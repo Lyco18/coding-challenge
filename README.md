@@ -18,8 +18,10 @@ DB_USERNAME=root
 DB_PASSWORD=password
 
 -Run following commands:
-`composer install`
-`npm run install`
+```php
+composer install
+npm run install
+```
 
 Create database in
 
