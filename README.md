@@ -23,7 +23,10 @@ DB_PASSWORD=[password]
 -Run following commands:
 ```php
 composer install
-npm run install
+npm install
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
 ```
 
 Create database in
