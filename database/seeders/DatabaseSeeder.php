@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'company' => $faker->company,
             'position' => $faker->jobTitle,
             'email' => $faker->email,
-            'number' => 1234567890,
+            'number' => $faker->e164PhoneNumber,
         ]);
       }
     }
