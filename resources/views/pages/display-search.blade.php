@@ -30,7 +30,7 @@
               </tr>
               @foreach ($contacts as $contact)
                 <tr>
-                  <td>{{ $contact->name }} {{ $contact->sirname }}</td>
+                  <td>{{ $contact->name }} {{ $contact->surname }}</td>
                   <td>{{ $contact->dob }}</td>
                   <td>{{ $contact->company }}</td>
                   <td>{{ $contact->position }}</td>

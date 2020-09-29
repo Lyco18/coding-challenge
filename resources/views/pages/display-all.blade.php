@@ -24,7 +24,7 @@
                   </tr>
                   @foreach ($contacts as $contact)
                     <tr>
-                      <td><a href="{{ route('contacts.edit', $contact->email)}}" class="btn btn-primary">{{ $contact->name }} {{ $contact->sirname }}</a></td>
+                      <td><a href="{{ route('contacts.edit', $contact->email)}}" class="btn btn-primary">{{ $contact->name }} {{ $contact->surname }}</a></td>
                       <td>{{ $contact->dob }}</td>
                       <td>{{ $contact->company }}</td>
                       <td>{{ $contact->position }}</td>

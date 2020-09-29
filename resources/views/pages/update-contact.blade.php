@@ -18,8 +18,8 @@
           {!! F::text("name", $contacts->name, ["class"=>"form-control","required"=>"required"]) !!}
         </div>
         <div class="form-group required">
-           {!! F::label("Sirname") !!}
-           {!! F::text("sirname", $contacts->sirname, ["class"=>"form-control","required"=>"required"]) !!}
+           {!! F::label("Surname") !!}
+           {!! F::text("surname", $contacts->sirname, ["class"=>"form-control","required"=>"required"]) !!}
         </div>
 
         <div class="form-group required">

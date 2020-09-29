@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
       foreach (range(1,100) as $index) {
         DB::table('contacts')->insert([
             'name' => $faker->firstName,
-            'sirname' => $faker->lastName,
+            'surname' => $faker->lastName,
             'dob' => $faker->date,
             'company' => $faker->company,
             'position' => $faker->jobTitle,

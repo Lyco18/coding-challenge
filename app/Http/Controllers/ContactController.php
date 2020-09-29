@@ -22,7 +22,7 @@ class ContactController extends Controller
 
       $contactsQuery = DB::table('contacts')
           ->where('name', 'LIKE', $searchQ . '%')
-          ->orWhere('sirname', 'LIKE', $searchQ . '%')
+          ->orWhere('surname', 'LIKE', $searchQ . '%')
           ->orWhere('email', 'LIKE', $searchQ . '%')
           ->orWhere('company', 'LIKE', $searchQ . '%')
           ->paginate(5);
@@ -59,7 +59,7 @@ class ContactController extends Controller
   {
           $request->validate([
             'name'=>'required',
-            'sirname'=>'required',
+            'surname'=>'required',
             'dob'=>'required',
             'company'=>'required',
             'position'=>'required',
@@ -68,7 +68,7 @@ class ContactController extends Controller
           ]);
           $contact = new Contact([
               'name' => $request->get('name'),
-              'sirname' => $request->get('sirname'),
+              'surname' => $request->get('surname'),
               'dob' => $request->get('dob'),
               'company' => $request->get('company'),
               'position' => $request->get('position'),
@@ -83,7 +83,7 @@ class ContactController extends Controller
   {
         $request->validate([
             'name'=>'required',
-            'sirname'=>'required',
+            'surname'=>'required',
             'dob'=>'required',
             'company'=>'required',
             'position'=>'required',
@@ -94,7 +94,7 @@ class ContactController extends Controller
         $contact = Contact::find($email);
 
         $contact->name = $request['name'];
-        $contact->sirname = $request['sirname'];
+        $contact->surname = $request['surname'];
         $contact->dob = $request['dob'];
         $contact->company = $request['company'];
         $contact->position = $request['position'];

@@ -20,8 +20,8 @@
 				{!! F::text("name", null ,["class"=>"form-control","required"=>"required"]) !!}
 			</div>
       <div class="form-group required">
-         {!! F::label("Sirname") !!}
-         {!! F::text("sirname", null ,["class"=>"form-control","required"=>"required"]) !!}
+         {!! F::label("Surname") !!}
+         {!! F::text("surname", null ,["class"=>"form-control","required"=>"required"]) !!}
       </div>
 
       <div class="form-group required">
