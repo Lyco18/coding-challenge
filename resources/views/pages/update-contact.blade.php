@@ -19,12 +19,12 @@
         </div>
         <div class="form-group required">
            {!! F::label("Surname") !!}
-           {!! F::text("surname", $contacts->sirname, ["class"=>"form-control","required"=>"required"]) !!}
+           {!! F::text("surname", $contacts->surname, ["class"=>"form-control","required"=>"required"]) !!}
         </div>
 
         <div class="form-group required">
           {!! F::label("Date of birth") !!}
-          {!! F::text("dob", $contacts->dob, ["class"=>"form-control","required"=>"required"]) !!}
+          {!! F::date("dob", $contacts->dob, ["class"=>"form-control","required"=>"required"]) !!}
         </div>
 
         <div class="form-group required">
@@ -39,7 +39,7 @@
 
          <div class="form-group required">
           {!! F::label("Email") !!}
-          {!! F::text("email", $contacts->email, ["class"=>"form-control","required"=>"required"]) !!}
+          {!! F::email("email", $contacts->email, ["class"=>"form-control","required"=>"required"]) !!}
         </div>
 
          <div class="form-group required">

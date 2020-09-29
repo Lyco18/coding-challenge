@@ -1,6 +1,5 @@
 @extends('layouts.default')
 @section('content')
-
 @if (\Session::has('success'))
     <div class="alert alert-success">
         <ul>
@@ -26,7 +25,7 @@
 
       <div class="form-group required">
         {!! F::label("Date of birth") !!}
-        {!! F::text("dob", null ,["class"=>"form-control","required"=>"required"]) !!}
+        {!! F::date("dob", null ,["class"=>"form-control","required"=>"required"]) !!}
       </div>
 
       <div class="form-group required">
@@ -40,8 +39,8 @@
       </div>
 
 			 <div class="form-group required">
-				{!! F::label("EMAIL") !!}
-				{!! F::text("email", null ,["class"=>"form-control","required"=>"required"]) !!}
+				{!! F::label("Email") !!}
+				{!! F::email("email", null ,["class"=>"form-control","required"=>"required"]) !!}
 			</div>
 
 			 <div class="form-group required">

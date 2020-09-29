@@ -16,6 +16,15 @@ input[type=password], select {
   box-sizing: border-box;
 }
 
+input[type=date], select {
+  width: 60%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 input[type=email], select {
   width: 60%;
   padding: 12px 20px;
