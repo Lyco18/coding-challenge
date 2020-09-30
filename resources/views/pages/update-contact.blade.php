@@ -8,7 +8,7 @@
           </ul>
       </div>
   @endif
-  {!! F::open(['action' =>['App\Http\Controllers\ContactController@update', $contacts->email], 'method' => 'POST'])!!}
+  {!! F::open(['action' =>['App\Http\Controllers\ContactController@update', $contacts->id], 'method' => 'POST'])!!}
   {{ csrf_field() }}
   {{ method_field('PATCH') }}
       <div class="col-md-6">

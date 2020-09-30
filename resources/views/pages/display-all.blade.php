@@ -34,13 +34,13 @@
                   </tr>
                   @foreach ($contacts as $contact)
                     <tr>
-                      <td><a href="{{ route('contacts.edit', $contact->email)}}" class="btn btn-primary">{{ $contact->name }} {{ $contact->surname }}</a></td>
+                      <td><a href="{{ route('contacts.edit', $contact->id)}}" class="btn btn-primary">{{ $contact->name }} {{ $contact->surname }}</a></td>
                       <td>{{ $contact->dob }}</td>
                       <td>{{ $contact->company }}</td>
                       <td>{{ $contact->position }}</td>
                       <td>{{ $contact->email }}</td>
                       <td>{{ $contact->number }}</td>
-                      <td><form action="{{ route('contacts.destroy', $contact->email)}}" method="post">
+                      <td><form action="{{ route('contacts.destroy', $contact->id)}}" method="post">
                           @csrf @method('DELETE')
                           <button class="btn btn-danger" type="submit">Delete</button>
                       </form></td>

@@ -45,14 +45,14 @@ class ContactController extends Controller
 
   public function show($email)
   {
-     $contacts =  Contact::find($email);
-     return view('pages/display-all', compact(['contacts']));
+     $contacts =  Contact::find($id);
+     return view('pages/display-all', compact('contacts'));
   }
 
-  public function edit($email)
+  public function edit($id)
   {
-     $contacts = Contact::find($email);
-     return view('pages/update-contact', compact(['contacts']));
+     $contacts = Contact::find($id);
+     return view('pages/update-contact', compact('contacts'));
   }
 
   public function store(Request $request)
@@ -79,7 +79,7 @@ class ContactController extends Controller
           return redirect()->back()->with('success','The new contact has been successfully created');
   }
 
-  public function update(Request $request, $email)
+  public function update(Request $request, $id)
   {
         $request->validate([
             'name'=>'required',
@@ -91,7 +91,7 @@ class ContactController extends Controller
             'number'=>'required'
         ]);
 
-        $contact = Contact::find($email);
+        $contact = Contact::find($id);
 
         $contact->name = $request['name'];
         $contact->surname = $request['surname'];
@@ -105,9 +105,9 @@ class ContactController extends Controller
         return redirect()->back()->with('success','The new contact has been successfully updated');
   }
 
-  public function destroy($email)
+  public function destroy($id)
   {
-      Contact::where('email', $email)->delete();
+      Contact::where('id', $id)->delete();
       return redirect()->back()->with('success','Contact successfully deleted');
   }
 }
