@@ -8,9 +8,19 @@
                       <li>{!! \Session::get('success') !!}</li>
                   </ul>
               </div>
-          <form action="{{ asset('/contacts/create') }}">
-            <button type="submit" class="btn btn-default">Create new Contact</button>
-          </form>
+          <div class="create-search">
+              <form action="{{ asset('/contacts/create') }}">
+                <button type="submit" class="btn btn-default">Create new Contact</button>
+              </form>
+              <form action="{{ asset('display-search')}}" method="GET" role="q">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="q"
+                        placeholder="Search Contacts">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+              </form>
+          </div>
 
           <div class="display-table">
               <table>

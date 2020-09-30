@@ -291,6 +291,10 @@ button[type=submit]:hover {
   text-align: center;
 }
 
+.create-search {
+  display: inline;
+}
+
 .display-table {
   width: 800px;
 }

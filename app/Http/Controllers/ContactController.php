@@ -28,7 +28,7 @@ class ContactController extends Controller
           ->paginate(5);
 
       $contacts = $contactsQuery;
-      return view('pages/display-search', compact('contacts', 'searchQ'));
+      return view('pages/display-all', compact('contacts', 'searchQ'));
   }
 
   public function list()
